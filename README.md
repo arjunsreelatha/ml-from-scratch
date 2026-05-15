@@ -1,23 +1,29 @@
 # ml-from-scratch
-A learning project where I build Logistic Regression and Decision Tree from scratch using only Python and NumPy, to understand ML fundamentals deeply and later use them in a Credit Risk Model.
-# ml-from-scratch
 
-This repository is where I am building core machine learning algorithms from scratch using only Python and NumPy. The goal is to understand how the math and logic work under the hood instead of depending on Scikit-learn or other ML libraries.
+A machine learning learning project where core algorithms are implemented from scratch using only Python and NumPy.
 
-## Why I built this
+## Overview
 
-I built this project to get better at the fundamentals of machine learning by implementing things step by step myself. It is also the base for a later project where I will use these algorithms in a credit risk model.
+This repository is focused on understanding machine learning fundamentals by building the underlying math and logic step by step instead of relying on high-level ML libraries such as Scikit-learn. The long-term goal is to use these implementations as the foundation for a later credit risk modeling project. 
 
-## What I am building
+## Why this project
 
-Right now, this repo focuses on the foundations needed before applying ML to a real problem. The main algorithms I am building are:
+The purpose of this project is to build a strong understanding of how machine learning algorithms actually work internally. Writing the algorithms from scratch makes concepts like matrix operations, probability, optimisation, and model training much easier to understand and explain.
 
-- Logistic Regression
-- Decision Tree
+## What this repository includes
 
-Along the way, I am also writing smaller scripts for matrix operations, sigmoid, gradient descent, and loss functions.
+This repository contains both small foundation scripts and larger algorithm-building blocks.
 
-## Folder structure
+Current focus areas include:
+
+- Matrix operations with NumPy
+- Sigmoid function and its derivative
+- Probability utilities such as joint probability and Bayes' theorem
+- Gradient descent and loss functions
+- Logistic regression from scratch
+- Decision tree fundamentals
+
+## Repository structure
 
 ```text
 ml-from-scratch/
@@ -26,10 +32,28 @@ ml-from-scratch/
 └── notebooks/
 ```
 
-- `foundations/` → core math and algorithm implementations
-- `utils/` → helper functions like metrics and visualisation
-- `notebooks/` → optional experiments and concept exploration
+- `foundations/` - core mathematical and algorithm implementations
+- `utils/` - helper utilities such as metrics and visualisation functions
+- `notebooks/` - optional experiments, notes, and concept exploration
+
+## Project approach
+
+Each concept is implemented as a small, focused script so the learning process stays visible and easy to follow. The project starts with mathematical and programming foundations, then gradually builds toward complete machine learning algorithms.
+
+## Current status
+
+This is an active learning project and the repository is being updated incrementally. Some files are intentionally simple at first and will be refined over time as the implementations become cleaner, more reusable, and better documented.
+
+## Future direction
+
+The main goal is to finish building logistic regression and decision tree implementations from scratch and reuse them in a separate credit risk model project. This repository acts as the foundation layer for that larger applied ML project.
+
+## Tech stack
+
+- Python
+- NumPy
+- Matplotlib
 
 ## Note
 
-This is a learning project. The code may start simple and improve over time as I understand the concepts better and clean things up.
+This repository is primarily for learning and depth of understanding. The emphasis is on clarity, implementation from first principles, and steady improvement over time.
