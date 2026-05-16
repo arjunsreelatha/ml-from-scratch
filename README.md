@@ -57,3 +57,49 @@ The main goal is to finish building logistic regression and decision tree implem
 ## Note
 
 This repository is primarily for learning and depth of understanding. The emphasis is on clarity, implementation from first principles, and steady improvement over time.
+
+## experiment
+Learning Rate Experiment
+
+Goal:
+To study how different learning rates affect gradient descent on the same linear regression problem.
+
+Functions used:
+
+    compute_descent_step()
+
+    train_linear_model()
+
+    plot_loss_history()
+
+Method:
+I trained the same model with three learning rates: 0.001, 0.01, and 0.1.
+The dataset, model, and number of epochs stayed the same, so only the learning rate changed.
+
+Results:
+
+    0.001: loss decreased slowly, so convergence was slow.
+
+    0.01: loss dropped faster and reached a much better value.
+
+    0.1: loss exploded, so the model diverged.
+
+Important terms:
+
+    Convergence: loss decreases and approaches a stable minimum.
+
+    Divergence: loss grows instead of shrinking.
+
+    Overshooting minima: the update step is too large and jumps past the best point.
+
+    Learning rate: the step size used to update weights.
+
+    Epoch: one full pass of the training loop.
+
+Interpretation:
+A small learning rate is stable but slow.
+A medium learning rate is often the best tradeoff because it learns fast without becoming unstable.
+A large learning rate can make the model unstable because the weights change too much each step.
+
+Conclusion:
+This experiment shows the core tradeoff in gradient descent: smaller learning rates are safer, larger learning rates are faster but risky, and a middle value often gives the best training behavior
