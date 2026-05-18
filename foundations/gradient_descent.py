@@ -1,5 +1,7 @@
 import math
 from collections import Counter
+import os
+import os
 from typing import Sequence
 
 import numpy as np
@@ -99,15 +101,7 @@ def train_minibatch_model(X: NDArray, y: NDArray, weights: NDArray = None, bias:
         loss_history.append(epoch_loss)
     return weights, bias, loss_history
 
-def plot_loss_history(loss_history: list[float]) -> None:
-    """Plot the loss history over epochs."""
-    plt.figure(figsize=(8, 5))
-    plt.plot(loss_history, color="blue")
-    plt.xlabel("Epoch")
-    plt.ylabel("Loss")
-    plt.title("Loss Curve")
-    plt.grid(True)
-    plt.show()
+
 
 def main():
     X = np.array([[1], [2], [3], [4], [5]], dtype=float)
@@ -124,7 +118,7 @@ def main():
     learn_rate = [0.001,0.01,0.1]
     for lr in learn_rate:
         final_weights,final_bias,loss_history = train_linear_model(X,y,learning_rate=lr,epochs=100)
-        plt.plot(loss_history,label=f"learning_rate={lr}")
+        plot_loss_history(loss_history, title=f"Loss Curve (Learning Rate: {lr})", save_path=None, color="blue")
 
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
