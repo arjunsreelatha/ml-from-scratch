@@ -28,12 +28,28 @@ Current focus areas include:
 ```text
 ml-from-scratch/
 ├── foundations/
+│   ├── matrix_ops.py
+│   ├── sigmoid.py
+│   ├── gradient_descent.py
+│   ├── loss_functions.py
+│   ├── logistic_regression.py
+│   └── decision_tree_basic.py
 ├── utils/
+│   ├── metrics.py
+│   └── visualise.py
 └── notebooks/
 ```
 
-- `foundations/` - core mathematical and algorithm implementations
-- `utils/` - helper utilities such as metrics and visualisation functions
+- `foundations/` - core mathematical and algorithm implementations:
+    - `matrix_ops.py`
+    - `sigmoid.py`
+    - `gradient_descent.py`
+    - `loss_functions.py`
+    - `logistic_regression.py`
+    - `decision_tree_basic.py`
+- `utils/` - helper utilities such as metrics and visualisation functions:
+    - `metrics.py`
+    - `visualise.py`
 - `notebooks/` - optional experiments, notes, and concept exploration
 
 ## Project approach
