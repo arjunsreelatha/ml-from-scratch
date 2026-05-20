@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from numpy.typing import NDArray
 
 from loss_functions import compute_mse
+from utils/visualise import plot_loss_history
 
 
 DEFAULT_LEARNING_RATE = 0.01
