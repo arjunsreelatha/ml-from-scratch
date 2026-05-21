@@ -3,6 +3,8 @@ from numpy.typing import NDArray
 
 from sigmoid import sigmoid
 from loss_functions import bin_cross_entropy
+from utils.metrics import accuracy, precision
+
 
 
 def initialise_parameters(X: NDArray) -> tuple[NDArray, float]:
@@ -43,13 +45,7 @@ def training_loop(
 
     return w, b, losses
 
-def accuracy(y_true: NDArray, y_pred: NDArray) -> float:
-    return np.mean(y_true == y_pred)
 
-def precision(y_true: NDArray, y_pred: NDArray) -> float:
-    tp = np.sum((y_true == 1) & (y_pred == 1))
-    fp = np.sum((y_true == 0) & (y_pred == 1))
-    return tp / (tp + fp) if (tp + fp) != 0 else 0.0
 
 def main():
     np.random.seed(0)

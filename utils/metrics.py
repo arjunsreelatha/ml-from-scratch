@@ -1,4 +1,7 @@
 """Metrics utilities for basic statistical calculations."""
+import numpy as np
+import math
+from numpy.typing import NDArray
 
 def mean(data):
     """Return the arithmetic mean of a list of numbers."""
@@ -38,3 +41,16 @@ def bayes_theorem(p_b_given_a, p_a, p_b):
     if p_b == 0:
         return 0
     return (p_b_given_a * p_a) / p_b
+
+def accuracy(y_true: NDArray, y_pred: NDArray) -> float:
+    return np.mean(y_true == y_pred)
+
+def precision(y_true: NDArray, y_pred: NDArray) -> float:
+    tp = np.sum((y_true == 1) & (y_pred == 1))
+    fp = np.sum((y_true == 0) & (y_pred == 1))
+    return tp / (tp + fp) if (tp + fp) != 0 else 0.0
+
+def recall(y_true: NDArray, y_pred: NDArray) -> float:
+    tp = np.sum((y_true == 1) & (y_pred == 1))
+    fn = np.sum((y_true == 1) & (y_pred == 0))
+    return tp / (tp + fn) if (tp + fn) != 0 else 0.0

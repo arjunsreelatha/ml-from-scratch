@@ -5,6 +5,9 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from numpy.typing import NDArray
+
+from foundations.gradient_descent import predict_linear
 
 def load_csv(path: str, required_columns: list[str]) -> tuple[list[dict], list[tuple]]:
     """
@@ -62,3 +65,18 @@ def plot_loss_history(loss_history: list[float], title: str, save_path: str | No
         "min_loss_iteration": min_idx,
         "total_iterations": len(loss_history)
     }
+
+def plot_regression_line(X:NDArray, y:NDArray, weights:NDArray, bias:float  ) -> None:
+    """plot actual data points and the regression line defined by weights an bias"""
+    predictions = predict_linear(X, weights, bias)
+
+    plt.figure(figsize=(8, 5))
+    plt.scatter(X[:, 0], y, color="blue", label="Actual data")
+    plt.plot(X[:, 0], predictions, color="red", label="Regression line")
+
+    plt.xlabel("X")
+    plt.ylabel("y")
+    plt.title("Linear Regression")
+    plt.legend()
+    plt.grid(True)
+    plt.show()

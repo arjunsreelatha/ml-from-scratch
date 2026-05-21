@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from numpy.typing import NDArray
 
 from loss_functions import compute_mse
-from utils/visualise import plot_loss_history
+from utils.visualise import plot_loss_history,plot_regression_line
 
 
 DEFAULT_LEARNING_RATE = 0.01
@@ -26,20 +26,7 @@ def predict_linear(X:NDArray, weights:NDArray, bias:float) -> NDArray:
     return np.dot(X, weights) + bias
 
 
-def plot_regression_line(X:NDArray, y:NDArray, weights:NDArray, bias:float  ) -> None:
-    """plot actual data points and the regression line defined by weights an bias"""
-    predictions = predict_linear(X, weights, bias)
 
-    plt.figure(figsize=(8, 5))
-    plt.scatter(X[:, 0], y, color="blue", label="Actual data")
-    plt.plot(X[:, 0], predictions, color="red", label="Regression line")
-
-    plt.xlabel("X")
-    plt.ylabel("y")
-    plt.title("Linear Regression")
-    plt.legend()
-    plt.grid(True)
-    plt.show()
 
 def compute_linear_gradients(X: NDArray, y: NDArray, weights: NDArray, bias: float) -> tuple[NDArray, float, NDArray]:
     """compute the gradients of the loss with respect to weights and bias for a linear model"""
